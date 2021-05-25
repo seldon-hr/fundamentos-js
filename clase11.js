@@ -40,10 +40,10 @@ imprimirProfesione(seldon)
 
 function mayorEdad(persona){
     if(persona.edad > 18){
-        console.log('Es mayor de edad')
+        console.log(`${persona.nombre} es mayor de edad`)
     }
     else{
-        console.log('No es mayor de edad')
+        console.log(`${persona.nombre} es menor de edad`)
     }
 }
 
