@@ -10,25 +10,16 @@ var dimoteo = {
     edad: 39
 }
 
-function imprimirNombreEnMayusculas(persona){
-    //var nombre = persona.nombre
-    var { nombre } = persona
-    console.log(persona.nombre.toUpperCase())
-}
-
-// imprimirNombreEnMayusculas(seldon)
-// imprimirNombreEnMayusculas(dimoteo)
-
-function imprimirNombreYEdad(persona){
-    var { nombre } = persona
-    var { edad } = persona
-    console.log(`Hola me llamo ${persona.nombre} y tengo ${persona.edad} años`)
-}
-
-// imprimirNombreYEdad(seldon)
-// imprimirNombreYEdad(dimoteo)
 
 
-function cumpleanos(persona){
-    edad += 1
+// function cumpleanos(persona){
+//     return{
+//         ...persona,
+//         edad: persona.edad + 1
+//     }
+//     persona.edad += 1
+// }
+
+function cumpleanos( persona){
+    persona.edad += 1
 }
