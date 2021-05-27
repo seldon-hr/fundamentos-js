@@ -35,7 +35,7 @@ function imprimirProfesione(persona){
     }  
     
 }
-const MAYORIA_DE_EDAD = 18
+const MAYORIA_DE_EDAD = 18 //Buena práctica una constante se escricbe en mayusculas y con guión bajo de separación
 
 imprimirProfesione(seldon)
 
