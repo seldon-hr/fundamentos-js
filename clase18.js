@@ -35,16 +35,19 @@ var paula = {
 }
 
 const ALTURA_DE_ALTO = 1.8
+const ALTRUA_BAJA = 1.6
 
 
 // const esAlta = persona => persona.altura > ALTURA_DE_ALTO
 //better 
 const esAlta = ({ altura }) => altura > ALTURA_DE_ALTO
 
+const esBaja = ({ altura }) => altura < ALTRUA_BAJA
 
 var personas = [sacha, alan, martin, dario, vicky, paula]
 
 var personasAltas = personas.filter(esAlta)
+var personasBajas = personas.filter(esBaja)
 
 
 //Otra forma de escribir
@@ -53,3 +56,4 @@ var personasAltas = personas.filter(esAlta)
 // })
 
 console.log(personasAltas)
+console.log(personasBajas)
