@@ -10,36 +10,28 @@ var seldon = {
     drone: true
 }
 
+var dimoteo = { }
 
 const MAYORIA_DE_EDAD = 18
 
-
-//Función anónima
-// const esMayorDeEdad = function(persona){
-//     return persona.edad >= MAYORIA_DE_EDAD
-// }
-
-//Arrow function
 const esMayorDeEdad = ({ edad }) => edad >= MAYORIA_DE_EDAD
 
-
-
-function mayorEdad(persona){
-    if(esMayorDeEdad(persona)){
+function imprimirSiEsMayorDeEdad ( persona ){
+    if( esMayorDeEdad (persona)){
         console.log(`${persona.nombre} es mayor de edad`)
-    }
-    else{
+    }else{
         console.log(`${persona.nombre} es menor de edad`)
     }
 }
 
-function permitirAcceso(){
-    if(!esMayorDeEdad){
-        console.log(`ACCESO NEGADO`)
-    }
-}
 
+// function permitirAcceso(persona){
+//     if(!esMayorDeEdad(persona)){
+//         console.log('ACCESO DENEGADO')
+//     }
+// }
+
+dimoteo.edad = 12
 const permitirAcceso = ({ edad }) => !esMayorDeEdad({ edad }) ? console.log('Acceso denegado') : console.log('Adelante')
 
 
-mayorEdad(seldon)
