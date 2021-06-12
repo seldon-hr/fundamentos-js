@@ -1,9 +1,12 @@
-const phrase = 'Hoy es un grand día para programar'
-const word = 'programar'
+const phrase = "Hoy es un gran dia para programar";
+const word = "programar";
 
-const findWord = function(phrase, word){
-    let newPhrase = phrase.search('programar')
-    return newPhrase
-}
+const findWord = function (phrase, word) {
+  if (phrase.search(word) >= 0) {
+      return true
+    } else {
+      return false;
+      }
+};
 
-console.log()
+console.log(findWord(phrase, word));
