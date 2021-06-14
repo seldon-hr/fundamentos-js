@@ -106,7 +106,8 @@
             this.siguienteNivel()
         } 
         
-        inicializar(){     
+        inicializar(){
+            this.elegirColor = this.elegirColor.bind(this)
             btnEmpezar.classList.add('hide')
             this.nivel = 1 
             this.colores = {
@@ -123,6 +124,7 @@
 
         siguienteNivel(){
             this.iluminarSecuencia()
+            this.agregarEventosClick()
         }
 
         transformarNumeroAColor(numero){
@@ -138,7 +140,7 @@
             }
         }
 
-        iluminarSecuencia(){ // let mantiene la variable a diferencia de var que siempre pisa la misma variable, usar siempre conts antes que let y usar siepre let antes de var.
+        iluminarSecuencia(){ 
             for (let i = 0; i < this.nivel; i++){
                 const color = this.transformarNumeroAColor(this.secuencia[i]) 
                 setTimeout(() => this.iluminarColor(color), 1000*i)
@@ -153,6 +155,30 @@
         apagarColor(color){
             this.colores[color].classList.remove('light')
         }
+
+        agregarEventosClick() {
+          this.colores.celeste.addEventListener('click', this.elegirColor)
+          this.colores.verde.addEventListener('click', this.elegirColor)
+          this.colores.violeta.addEventListener('click', this.elegirColor)
+          this.colores.naranja.addEventListener('click', this.elegirColor)
+        }
+
+        elegirColor(ev) {
+          console.log(this)
+          /*
+          En este ámbito tenemos que entender quién es this, y arrbia hacemos
+          referencia a que this puede ser nuestro botón que presionamos, eso es lo
+          que ocurre cuando en la función agregarEventosClick lo referenciamos.
+
+
+          Existe un método en el cual podemos cambiar una función de quién es this,
+          con una función llamada .bind(), y pasar como argumento this.
+          Obteniendo esto:  this.elegirColor.bind(this) de manera que estamos perdiendo
+          la referencia a this, para ello hacemos esta referencia con lo anterior o con
+          self
+          */
+        }
+
     }    
 
     function empezarJuego(){    
