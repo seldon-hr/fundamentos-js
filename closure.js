@@ -17,9 +17,9 @@ console.log(wrap2())
 
 //Second example
 function multiplier(factor) {
-	// return number => number * factor
+	// return number => number * factor   (arrow function)
     return function(number) {
-        number = number * factor
+       return number = number * factor
     } 
 }
 
